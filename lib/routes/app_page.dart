@@ -86,11 +86,11 @@ class AppPage {
     ),
     GetPage(
       name: RouteNames.chat,
-      page: () => const ObrolanView(),
+      page: () => ObrolanView(),
     ),
     GetPage(
       name: RouteNames.profile,
-      page: () => const PengaturanView(),
+      page: () => PengaturanView(),
     ),
     GetPage(
       name: RouteNames.daftarperizinan,

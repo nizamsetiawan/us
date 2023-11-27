@@ -7,6 +7,9 @@ class PerizinanCard {
   final String idPengajuan;
   final String status;
   final String iconPerizinan;
+  final String? alamat;
+  final String? nb;
+  final String? npwp;
   // final String urlPDF;
 
   PerizinanCard({
@@ -18,6 +21,9 @@ class PerizinanCard {
     required this.idPengajuan,
     required this.status,
     required this.iconPerizinan,
+    this.alamat,
+    this.nb,
+    this.npwp,
     // required this.urlPDF,
   });
 }

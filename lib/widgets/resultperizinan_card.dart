@@ -61,7 +61,7 @@ class PerizinanCardWidget extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.location_on, size: 8),
+                Icon(Icons.business_outlined, size: 8),
                 SizedBox(width: 8.0),
                 Text(
                   pengajuan.lokasi,

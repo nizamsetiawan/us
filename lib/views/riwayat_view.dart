@@ -36,12 +36,6 @@ class _RiwayatViewState extends State<RiwayatView> {
         title: const Text("RIWAYAT"),
         centerTitle: true,
         elevation: 0,
-        leading: GestureDetector(
-          onTap: () {
-            Get.offAllNamed(RouteNames.bottomNavigation);
-          },
-          child: const Icon(Icons.arrow_back_ios_new),
-        ),
       ),
       body: Column(
         children: [
@@ -56,18 +50,21 @@ class _RiwayatViewState extends State<RiwayatView> {
             ),
           ),
           Expanded(
-            child: PageView(
-              controller: _pageController,
-              onPageChanged: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-              children: [
-                buildProsesScreen(),
-                buildVerifikasiScreen(),
-                buildSurveyScreen(),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PageView(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                children: [
+                  buildProsesScreen(),
+                  buildVerifikasiScreen(),
+                  buildSurveyScreen(),
+                ],
+              ),
             ),
           ),
         ],
@@ -128,15 +125,10 @@ class _RiwayatViewState extends State<RiwayatView> {
           return PerizinanCardWidget(
             pengajuan: pengajuan,
             onTap: () {
-              if (pengajuan.idPengajuan == 'URSBY1234567890') {
-                Get.offAllNamed(RouteNames.riwayatperizinan);
-              } else if (pengajuan.idPengajuan == '') {
-                // Aksi untuk ID 'URSBY0987654321'
-                // ... Tambahkan aksi yang sesuai di sini
-              } else {
-                // Aksi default untuk ID lainnya
-                // ... Tambahkan aksi default di sini
-              }
+              Get.toNamed(
+                RouteNames.riwayatperizinan,
+                arguments: pengajuan.idPengajuan,
+              );
             },
           );
         },
@@ -155,15 +147,10 @@ class _RiwayatViewState extends State<RiwayatView> {
           return PerizinanCardWidget(
             pengajuan: pengajuan,
             onTap: () {
-              if (pengajuan.idPengajuan == 'URSBY0987654321') {
-                Get.offAllNamed(RouteNames.riwayatperizinan);
-              } else if (pengajuan.idPengajuan == '') {
-                // Aksi untuk ID 'URSBY0987654321'
-                // ... Tambahkan aksi yang sesuai di sini
-              } else {
-                // Aksi default untuk ID lainnya
-                // ... Tambahkan aksi default di sini
-              }
+              Get.toNamed(
+                RouteNames.riwayatperizinan,
+                arguments: pengajuan.idPengajuan,
+              );
             },
           );
         },
@@ -182,15 +169,10 @@ class _RiwayatViewState extends State<RiwayatView> {
           return PerizinanCardWidget(
             pengajuan: pengajuan,
             onTap: () {
-              if (pengajuan.idPengajuan == 'URSBY0987651234') {
-                Get.offAllNamed(RouteNames.formpembangunansd);
-              } else if (pengajuan.idPengajuan == '') {
-                // Aksi untuk ID 'URSBY0987654321'
-                // ... Tambahkan aksi yang sesuai di sini
-              } else {
-                // Aksi default untuk ID lainnya
-                // ... Tambahkan aksi default di sini
-              }
+              Get.toNamed(
+                RouteNames.riwayatperizinan,
+                arguments: pengajuan.idPengajuan,
+              );
             },
           );
         },

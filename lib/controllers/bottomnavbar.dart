@@ -12,8 +12,8 @@ class BottomnavigationController extends GetxController {
     const BerandaView(),
     RiwayatView(),
     ScanView(),
-    const ObrolanView(),
-    const PengaturanView(),
+    ObrolanView(),
+    PengaturanView(),
   ];
 
   SetIndex(index) {

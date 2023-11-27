@@ -15,7 +15,12 @@ class PerizinanController extends GetxController {
       pendaftar: 'Regi Muhammar',
       idPengajuan: 'URSBY1234567890',
       status: 'Sedang ditinjau Operator',
+      alamat:
+          "Jl. Simo Gn. Barat III No.48, Simomulyo, Kec. Sukomanunggal, Surabaya, Jawa Timur 60281",
+      nb: "0123456789012",
+      npwp: "012345678901234",
     ),
+
     PerizinanCard(
       jenisPerizinan: "Perizinan TK",
       judul: 'Perizinan Pembangunan Taman Kanak-Kanak',
@@ -25,6 +30,10 @@ class PerizinanController extends GetxController {
       pendaftar: 'Someone Else',
       idPengajuan: 'URSBY0987654321',
       status: 'Menunggu Persetujuan',
+      alamat:
+          "Jl. Simo Gn. Barat III No.48, Simomulyo, Kec. Sukomanunggal, Surabaya, Jawa Timur 60281",
+      nb: "0123456789012",
+      npwp: "012345678901234",
     ),
     PerizinanCard(
       jenisPerizinan: "Perizinan SMP",
@@ -35,6 +44,10 @@ class PerizinanController extends GetxController {
       pendaftar: 'Someone Else',
       idPengajuan: 'URSBY0987651234',
       status: 'Menunggu Persetujuan',
+      alamat:
+          "Jl. Simo Gn. Barat III No.48, Simomulyo, Kec. Sukomanunggal, Surabaya, Jawa Timur 60281",
+      nb: "0123456789012",
+      npwp: "012345678901234",
     ),
     // Tambahkan data pengajuan lainnya di sini
   ].obs;
@@ -46,10 +59,11 @@ class PerizinanController extends GetxController {
         pengajuan.idPengajuan.toLowerCase().contains(query.toLowerCase())));
   }
 
-  // Buat variabel untuk menyimpan daftar pengajuan dalam berbagai substatus
+  /// Variabel untuk menyimpan daftar pengajuan dalam berbagai substatus
   RxList<dynamic> prosesList = [].obs;
   RxList<dynamic> verifikasiList = [].obs;
   RxList<dynamic> surveyList = [].obs;
+
   // Fungsi untuk mengelompokkan pengajuan berdasarkan status
   void groupPengajuanByStatus() {
     prosesList.clear();
