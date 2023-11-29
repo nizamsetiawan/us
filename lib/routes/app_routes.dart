@@ -43,4 +43,8 @@ abstract class RouteNames {
   static const notification = '/notification';
   static const search = '/search';
   static const riwayatperizinan = '/riwayatperizinan';
+  static const editprofile = '/editprofile';
+  static const faq = '/faq';
+  static const about = "/about";
+  static const syaratdanketentuan = '/snk';
 }

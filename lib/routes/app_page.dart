@@ -36,6 +36,10 @@ import 'package:us_mobile/views/pengajuan/TK/kategoriperizinan_view.dart';
 import 'package:us_mobile/views/pengajuan/TK/pembangunan_view.dart';
 import 'package:us_mobile/views/pengajuan/TK/perubahan_view.dart';
 import 'package:us_mobile/views/pengajuan/daftarperizinan_view.dart';
+import 'package:us_mobile/views/profile/about_view.dart';
+import 'package:us_mobile/views/profile/editprofile_view.dart';
+import 'package:us_mobile/views/profile/faq_view.dart';
+import 'package:us_mobile/views/profile/syaratketen_view.dart';
 import 'package:us_mobile/views/profile_view.dart';
 import 'package:us_mobile/views/riwayat.arsip/riwayatperizinan_view.dart';
 import 'package:us_mobile/views/riwayat_view.dart';
@@ -219,6 +223,22 @@ class AppPage {
     GetPage(
       name: RouteNames.riwayatperizinan,
       page: () => RiwayatPerizinanView(),
+    ),
+    GetPage(
+      name: RouteNames.editprofile,
+      page: () => EditProfileView(),
+    ),
+    GetPage(
+      name: RouteNames.faq,
+      page: () => FAQView(),
+    ),
+    GetPage(
+      name: RouteNames.about,
+      page: () => AboutView(),
+    ),
+    GetPage(
+      name: RouteNames.syaratdanketentuan,
+      page: () => SyaratDanKetentuanView(),
     ),
   ];
 }

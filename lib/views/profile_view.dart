@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:us_mobile/constant/colors.dart';
@@ -111,7 +112,7 @@ class PengaturanView extends StatelessWidget {
                                 fontSize: 14),
                           ),
                           onTap: () {
-                            // Get.offAllNamed(RouteNames.chat);
+                            Get.toNamed(RouteNames.editprofile);
                           },
                         ),
                       ),
@@ -142,7 +143,7 @@ class PengaturanView extends StatelessWidget {
                                 fontSize: 14),
                           ),
                           onTap: () {
-                            // Get.offAllNamed(RouteNames.chat);
+                            Get.toNamed(RouteNames.faq);
                           },
                         ),
                       ),
@@ -173,7 +174,7 @@ class PengaturanView extends StatelessWidget {
                                 fontSize: 14),
                           ),
                           onTap: () {
-                            // Get.offAllNamed(RouteNames.chat);
+                            Get.toNamed(RouteNames.syaratdanketentuan);
                           },
                         ),
                       ),
@@ -204,7 +205,7 @@ class PengaturanView extends StatelessWidget {
                                 fontSize: 14),
                           ),
                           onTap: () {
-                            // Get.offAllNamed(RouteNames.chat);
+                            Get.toNamed(RouteNames.about);
                           },
                         ),
                       ),
@@ -212,8 +213,11 @@ class PengaturanView extends StatelessWidget {
                     Padding(
                       padding:
                           const EdgeInsets.only(top: 20, right: 15, left: 15),
-                      child: ButtonWidgets(
-                        label: "Keluar",
+                      child: GestureDetector(
+                        onTap: () => _showExitConfirmationDialog(),
+                        child: ButtonWidgets(
+                          label: "Keluar",
+                        ),
                       ),
                     )
                   ],
@@ -225,4 +229,19 @@ class PengaturanView extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showExitConfirmationDialog() {
+  AwesomeDialog(
+    context: Get.overlayContext!,
+    dialogType: DialogType.question,
+    title: 'Konfirmasi',
+    desc: 'Apakah kamu yakin ingin keluar?',
+    btnCancelOnPress: () {
+      Get.back();
+    },
+    btnOkOnPress: () {
+      Get.offAllNamed(RouteNames.signIn); // Keluar aplikasi
+    },
+  )..show();
 }
